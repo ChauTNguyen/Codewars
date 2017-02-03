@@ -13,5 +13,5 @@ function solution(number) {
 
 /* One-liner, yet still readable, FP ES6 solution. */
 const solution = number => (number > 0) ? [...Array(number).keys()]
-                                            .filter((value) => (value !== 0 && (value % 3 == 0 || value % 5 == 0)))
-                                            .reduce((a, b) => (a + b), 0) : 0;
+                                            .filter(n => (n % 3 == 0 || n % 5 == 0))
+                                            .reduce((a, b) => a + b, 0) : 0;
