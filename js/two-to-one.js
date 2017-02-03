@@ -28,3 +28,11 @@ function longest(s1, s2) {
 
     return longestUnique.split('').sort().join('');
 }
+
+function longest(s1, s2) {
+  /* This ES5 solution takes advantage of the Set data structure. */
+  return Array.from(new Set(s1 + s2)).sort().join('');
+}
+
+/* ES6 pure solution of the above. */
+const longest = (s1, s2) => [...new Set(s1 + s2)].sort().join('');
