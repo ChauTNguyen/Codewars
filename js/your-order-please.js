@@ -5,7 +5,7 @@ function order(words) {
     but I also write an unoptimized bubble sort
     algorithm.
   */
-  var arr = words.split(" ");
+  var arr = words.split(' ');
   var numArr = [];
 
   for (var i = 0; i < arr.length; ++i) {

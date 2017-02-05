@@ -12,6 +12,10 @@ function solution(number) {
 }
 
 /* One-liner, yet still readable, FP ES6 solution. */
+/*
+    The array generation part could be optimized, but I wanted a cleaner one-liner.
+    For example, I could start at i = 3.
+*/
 const solution = number => (number > 0) ? [...Array(number).keys()]
-                                            .filter(n => (n % 3 == 0 || n % 5 == 0))
+                                            .filter(n => n % 3 == 0 || n % 5 == 0)
                                             .reduce((a, b) => a + b, 0) : 0;
