@@ -5,11 +5,10 @@ function duplicateEncode(word) {
     for (var i = 0; i < arr.length; ++i) {
         var c = arr[i];
 
-        if (arr.indexOf(c) === arr.lastIndexOf(c)) {
+        if (arr.indexOf(c) === arr.lastIndexOf(c))
             res.push('(');
-        } else {
+        else
             res.push(')');
-        }
     }
 
     return res.join('');
