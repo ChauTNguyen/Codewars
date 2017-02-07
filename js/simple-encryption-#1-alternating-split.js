@@ -4,17 +4,11 @@ function encrypt(text, n) {
         for (var x = 0; x < n; ++x) {
             var res = "";
 
-            for (var y = 1; y < text.length; ++y) {
-                if (y % 2 == 1) {
-                    res += text.charAt(y);
-                }
-            }
+            for (var y = 1; y < text.length; ++y)
+                if (y % 2 == 1) res += text.charAt(y);
 
-            for (var z = 0; z < text.length; ++z) {
-                if (z % 2 == 0) {
-                    res += text.charAt(z);
-                }
-            }
+            for (var z = 0; z < text.length; ++z)
+                if (z % 2 == 0) res += text.charAt(z);
 
             text = res;
         }
@@ -47,7 +41,7 @@ function decrypt(encryptedText, n) {
                    1 more odd-indexed character than even-indexed's. */
                 if (inner < Math.floor(encryptedText.length / 2))
                     res += encryptedText[inner];
-                console.log(res);
+                
                 ++outer;
                 ++inner;
             }
