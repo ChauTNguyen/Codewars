@@ -19,12 +19,6 @@ function orderWeight(string) {
 }
 
 function orderWeight(string) {
-    /*
-        This solution is also faster than some of others on Codewars
-        because although I wanted to use split and reduce for my algorithm
-        initially, I thought that it might be unnecessarily adding
-        slowness and complexity (reading-wise) to my algorithm.
-    */
     return string.split(' ').sort(function(a, b) {
         var acc = 0;
 
@@ -52,5 +46,11 @@ function orderWeight(string) {
         return sumA === sumB ? a.localeCompare(b) : sumA - sumB;
     }
 
+    return string.split(' ').sort(compare).join(' ');
+}
+
+function orderWeight(string) {
+    const sum = str => str.split('').reduce((t, n) => t + (+n), 0);
+    const compare = (a, b) => sum(a) == sum(b) ? a.localeCompare(b) : sum(a) - sum(b);
     return string.split(' ').sort(compare).join(' ');
 }
